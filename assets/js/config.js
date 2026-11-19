@@ -1,0 +1,1 @@
+window.NETRAVEX_CONFIG = {};

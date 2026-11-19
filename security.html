@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Netravex Technologies | Security</title>
+    <meta
+      name="description"
+      content="Security made simple: core controls to understand and advanced good practices to consider — encryption, masking, least privilege, logs, backups and vendor safeguards."
+    />
+    <meta name="theme-color" content="#030d1c" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Netravex Technologies" />
+    <meta property="og:title" content="Netravex Technologies | Security" />
+    <meta
+      property="og:description"
+      content="Security made simple: core controls to understand and advanced good practices to consider — encryption, masking, least privilege, logs, backups and vendor safeguards."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 3l14 5.5v9.5c0 9-6 15-14 19C12 33 6 27 6 18V8.5z' fill='%23030d1c' stroke='%2319d8ff' stroke-width='2.5'/%3E%3Cpath d='M14 27V13l12 14V13' fill='none' stroke='%23f5f9ff' stroke-width='3'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+  <body>
+    <div id="preloader" aria-hidden="true">
+      <div class="pl-inner">
+        <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <path
+            d="M20 3l14 5.5v9.5c0 9-6 15-14 19C12 33 6 27 6 18V8.5z"
+            fill="rgba(25,216,255,.08)"
+            stroke="#19d8ff"
+            stroke-width="1.8"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M14 27V13l12 14V13"
+            fill="none"
+            stroke="#f5f9ff"
+            stroke-width="2.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <div class="pl-word">NETRAVEX</div>
+        <div class="pl-bar"><i></i></div>
+      </div>
+    </div>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="scroll-progress" aria-hidden="true"><i></i></div>
+      <div class="container nav">
+        <a
+          class="brand"
+          href="index.html"
+          aria-label="Netravex Technologies — home"
+          ><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+            <path
+              d="M20 3l14 5.5v9.5c0 9-6 15-14 19C12 33 6 27 6 18V8.5z"
+              fill="rgba(25,216,255,.08)"
+              stroke="#19d8ff"
+              stroke-width="1.8"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M14 27V13l12 14V13"
+              fill="none"
+              stroke="#f5f9ff"
+              stroke-width="2.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <div><span>NETRAVEX</span><small>TECHNOLOGIES</small></div></a
+        >
+        <nav aria-label="Primary">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="dpdp.html">DPDP</a></li>
+            <li><a href="readiness.html">Readiness</a></li>
+            <li><a href="security.html" aria-current="page">Security</a></li>
+            <li><a href="rights.html">Rights &amp; Data</a></li>
+            <li><a href="response.html">Response</a></li>
+            <li><a href="governance.html">Governance</a></li>
+            <li><a href="roadmap.html">30-Day Roadmap</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="nav-right">
+          <a class="btn primary nav-cta" href="contact.html"
+            >Talk to Netravex</a
+          >
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Open menu"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="mobile-menu" id="mobile-menu">
+      <nav aria-label="Mobile">
+        <ul>
+          <li>
+            <a class="ml" href="index.html"
+              >Home<span class="i" aria-hidden="true"
+                ><svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M5 12h14M13 6l6 6-6 6" /></svg></span
+            ></a>
+          </li>
+          <li>
+            <a class="ml" href="about.html"
+              >About<span class="i" aria-hidden="true"
+                ><svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M5 12h14M13 6l6 6-6 6" /></svg></span
+            ></a>
+          </li>
+          <li>
+            <a class="ml" href="dpdp.html"
+              >DPDP<span class="i" aria-hidden="true"
+                ><svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M5 12h14M13 6l6 6-6 6" /></svg></span
+            ></a>
+          </li>
+          <li>
+            <a class="ml" href="readiness.html"
+              >Readiness<span class="i" aria-hidden="true"
+                ><svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M5 12h14M13 6l6 6-6 6" /></svg></span
+            ></a>
+          </li>
+          <li>
+            <a class="ml" href="security.html" aria-current="page"
+              >Security<span class="i" aria-hidden="true"
+                ><svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M5 12h14M13 6l6 6-6 6" /></svg></span
+            ></a>
+          </li>
+          <li>
+            <a class="ml" href="rights.html"
+              >Rights &amp; Data<span class="i" aria-hidden="true"
+                ><svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M5 12h14M13 6l6 6-6 6" /></svg></span
+            ></a>
+          </li>
+          <li>
+            <a class="ml" href="response.html"
+              >Response<span class="i" aria-hidden="true"
+                ><svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M5 12h14M13 6l6 6-6 6" /></svg></span
+            ></a>
+          </li>
+          <li>
+            <a class="ml" href="governance.html"
+              >Governance<span class="i" aria-hidden="true"
+                ><svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M5 12h14M13 6l6 6-6 6" /></svg></span
+            ></a>
+          </li>
+          <li>
+            <a class="ml" href="roadmap.html"
+              >30-Day Roadmap<span class="i" aria-hidden="true"
+                ><svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M5 12h14M13 6l6 6-6 6" /></svg></span
+            ></a>
+          </li>
+          <li>
+            <a class="ml" href="contact.html"
+              >Contact<span class="i" aria-hidden="true"
+                ><svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M5 12h14M13 6l6 6-6 6" /></svg></span
+            ></a>
+          </li>
+        </ul>
+      </nav>
+      <a class="btn primary" href="contact.html">Start a Scoped Conversation</a>
+    </div>
+    <main id="main">
+      <section class="page-hero">
+        <div class="ph-scene" aria-hidden="true">
+          <canvas data-scene="page" data-variant="security"></canvas>
+          <div class="ph-art" aria-hidden="true">
+            <i class="r r1"></i><i class="r r2"></i><i class="r r3"></i
+            ><span class="core"
+              ><span class="i" aria-hidden="true"
+                ><svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z" />
+                  <path d="M8.5 12l2.5 2.5 4.5-5" /></svg></span
+            ></span>
+          </div>
+        </div>
+        <div class="container ph-grid">
+          <div class="ph-text">
+            <div class="crumbs">
+              <a href="index.html">Home</a> <span>/</span> Security
+            </div>
+            <h1>Security <span class="hl">made simple</span></h1>
+            <p class="lead">
+              The source material describes minimum obligations and controls
+              separately from advanced good practices. Not every advanced
+              measure is a statutory minimum.
+            </p>
+            <div class="subnav">
+              <a href="#core">Core controls</a
+              ><a href="#advanced">Advanced good practices</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="core">
+        <div class="container">
+          <div class="sec-dash" data-reveal>
+            <div class="sec-scene">
+              <canvas
+                data-scene="security"
+                role="img"
+                aria-label="3D visual: security shield and lock with orbiting encrypted data blocks and a database connected by glowing lines"
+              ></canvas>
+              <div class="scene-fallback" aria-hidden="true">
+                <svg viewBox="0 0 200 220" fill="none">
+                  <path
+                    d="M100 14l70 28v52c0 46-30 80-70 104-40-24-70-58-70-104V42z"
+                    fill="rgba(25,216,255,.07)"
+                    stroke="#19d8ff"
+                    stroke-width="2.5"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M100 36l50 20v38c0 34-21 58-50 76-29-18-50-42-50-76V56z"
+                    stroke="#1a8cff"
+                    stroke-width="1.5"
+                  />
+                  <rect
+                    x="76"
+                    y="92"
+                    width="48"
+                    height="40"
+                    rx="6"
+                    stroke="#9bf3ff"
+                    stroke-width="3"
+                  />
+                  <path
+                    d="M85 92V80a15 15 0 0130 0v12"
+                    stroke="#9bf3ff"
+                    stroke-width="3"
+                  />
+                  <circle cx="100" cy="110" r="4" fill="#9bf3ff" />
+                  <g fill="#19d8ff">
+                    <circle cx="20" cy="60" r="3" />
+                    <circle cx="182" cy="40" r="3" />
+                    <circle cx="190" cy="150" r="3" />
+                    <circle cx="14" cy="170" r="3" />
+                  </g>
+                  <path
+                    d="M20 60L40 80M182 40L160 62M190 150L158 130M14 170L44 148"
+                    stroke="#19d8ff"
+                    stroke-opacity=".5"
+                  />
+                </svg>
+              </div>
+              <span class="hud">SECURITY OVERVIEW</span
+              ><span class="hint">Drag to rotate · Click for a pulse</span>
+            </div>
+            <aside class="panel ctrl-map">
+              <h3>Control map</h3>
+              <p class="muted" style="font-size: 0.85rem">
+                Hover a control to spotlight it in the 3D view.
+              </p>
+              <p class="muted" style="margin-top: 0.8rem">
+                Core controls to understand
+              </p>
+              <ul>
+                <li tabindex="0" data-ctrl="0">
+                  <span class="i" aria-hidden="true"
+                    ><svg viewBox="0 0 24 24" focusable="false">
+                      <rect x="5" y="11" width="14" height="10" rx="2" />
+                      <path d="M8 11V8a4 4 0 018 0v3" /></svg></span
+                  >Encryption
+                </li>
+                <li tabindex="0" data-ctrl="1">
+                  <span class="i" aria-hidden="true"
+                    ><svg viewBox="0 0 24 24" focusable="false">
+                      <path
+                        d="M3 3l18 18M10.6 5.1A9.7 9.7 0 0112 5c6.5 0 10 7 10 7a17 17 0 01-3.2 4M6.3 6.4A17 17 0 002 12s3.5 7 10 7c1.6 0 3-.4 4.2-1M9.9 9.9a3 3 0 004.2 4.2"
+                      /></svg></span
+                  >Masking
+                </li>
+                <li tabindex="0" data-ctrl="2">
+                  <span class="i" aria-hidden="true"
+                    ><svg viewBox="0 0 24 24" focusable="false">
+                      <circle cx="8" cy="15" r="4" />
+                      <path d="M11 12l9-9M16 7l3 3M14 9l2 2" /></svg></span
+                  >Access control and least privilege
+                </li>
+                <li tabindex="0" data-ctrl="3">
+                  <span class="i" aria-hidden="true"
+                    ><svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M3 12h4l3-8 4 16 3-8h4" /></svg></span
+                  >Activity logs
+                </li>
+                <li tabindex="0" data-ctrl="4">
+                  <span class="i" aria-hidden="true"
+                    ><svg viewBox="0 0 24 24" focusable="false">
+                      <path
+                        d="M21 12a9 9 0 01-15.5 6.2L3 16M3 12a9 9 0 0115.5-6.2L21 8"
+                      />
+                      <path d="M21 3v5h-5M3 21v-5h5" /></svg></span
+                  >Backups and recovery
+                </li>
+                <li tabindex="0" data-ctrl="5">
+                  <span class="i" aria-hidden="true"
+                    ><svg viewBox="0 0 24 24" focusable="false">
+                      <path
+                        d="M4 21V5l8-2 8 2v16M9 21v-5h6v5M8 9h2M14 9h2M8 13h2M14 13h2"
+                      /></svg></span
+                  >Vendor safeguards
+                </li>
+              </ul>
+              <p class="muted" style="margin-top: 1.2rem">
+                Advanced good practices to consider
+              </p>
+              <ul class="amber">
+                <li tabindex="0" data-ctrl="6">
+                  <span class="i" aria-hidden="true"
+                    ><svg viewBox="0 0 24 24" focusable="false">
+                      <rect x="8" y="7" width="8" height="12" rx="4" />
+                      <path
+                        d="M9 7a3 3 0 016 0M3 12h5M16 12h5M4 19l4-3M20 19l-4-3M4 5l4 3M20 5l-4 3"
+                      /></svg></span
+                  >Vulnerability checks and patching
+                </li>
+                <li tabindex="0" data-ctrl="7">
+                  <span class="i" aria-hidden="true"
+                    ><svg viewBox="0 0 24 24" focusable="false">
+                      <path
+                        d="M4 8h14M14 4l4 4-4 4M20 16H6M10 12l-4 4 4 4"
+                      /></svg></span
+                  >Secure transfer
+                </li>
+                <li tabindex="0" data-ctrl="8">
+                  <span class="i" aria-hidden="true"
+                    ><svg viewBox="0 0 24 24" focusable="false">
+                      <circle cx="12" cy="12" r="9" />
+                      <circle cx="12" cy="12" r="4" />
+                      <path d="M12 12l6-6" /></svg></span
+                  >Stronger monitoring and testing
+                </li>
+              </ul>
+            </aside>
+          </div>
+          <div class="legend">
+            <span><i></i> Core controls to understand</span
+            ><span><i class="d"></i> Advanced good practices to consider</span>
+          </div>
+          <div class="sec-head">
+            <span class="eyebrow">01</span>
+            <h2>Core controls to understand</h2>
+          </div>
+          <div class="grid g3 equal" data-stagger>
+            <article class="card ctrl">
+              <span class="idx">01</span>
+              <div class="ico">
+                <span class="i" aria-hidden="true"
+                  ><svg viewBox="0 0 24 24" focusable="false">
+                    <rect x="5" y="11" width="14" height="10" rx="2" />
+                    <path d="M8 11V8a4 4 0 018 0v3" /></svg
+                ></span>
+              </div>
+              <span class="tag">Core control</span>
+              <h3>Encryption</h3>
+              <p class="muted">Scramble data so outsiders cannot read it.</p>
+            </article>
+            <article class="card ctrl">
+              <span class="idx">02</span>
+              <div class="ico">
+                <span class="i" aria-hidden="true"
+                  ><svg viewBox="0 0 24 24" focusable="false">
+                    <path
+                      d="M3 3l18 18M10.6 5.1A9.7 9.7 0 0112 5c6.5 0 10 7 10 7a17 17 0 01-3.2 4M6.3 6.4A17 17 0 002 12s3.5 7 10 7c1.6 0 3-.4 4.2-1M9.9 9.9a3 3 0 004.2 4.2"
+                    /></svg
+                ></span>
+              </div>
+              <span class="tag">Core control</span>
+              <h3>Masking</h3>
+              <p class="muted">
+                Hide sensitive parts when full detail is not needed.
+              </p>
+            </article>
+            <article class="card ctrl">
+              <span class="idx">03</span>
+              <div class="ico">
+                <span class="i" aria-hidden="true"
+                  ><svg viewBox="0 0 24 24" focusable="false">
+                    <circle cx="8" cy="15" r="4" />
+                    <path d="M11 12l9-9M16 7l3 3M14 9l2 2" /></svg
+                ></span>
+              </div>
+              <span class="tag">Core control</span>
+              <h3>Access control and least privilege</h3>
+              <p class="muted">Only the right staff see what they need.</p>
+            </article>
+            <article class="card ctrl">
+              <span class="idx">04</span>
+              <div class="ico">
+                <span class="i" aria-hidden="true"
+                  ><svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M3 12h4l3-8 4 16 3-8h4" /></svg
+                ></span>
+              </div>
+              <span class="tag">Core control</span>
+              <h3>Activity logs</h3>
+              <p class="muted">Record who accessed what and when.</p>
+            </article>
+            <article class="card ctrl">
+              <span class="idx">05</span>
+              <div class="ico">
+                <span class="i" aria-hidden="true"
+                  ><svg viewBox="0 0 24 24" focusable="false">
+                    <path
+                      d="M21 12a9 9 0 01-15.5 6.2L3 16M3 12a9 9 0 0115.5-6.2L21 8"
+                    />
+                    <path d="M21 3v5h-5M3 21v-5h5" /></svg
+                ></span>
+              </div>
+              <span class="tag">Core control</span>
+              <h3>Backups and recovery</h3>
+              <p class="muted">Restore service after failure.</p>
+            </article>
+            <article class="card ctrl">
+              <span class="idx">06</span>
+              <div class="ico">
+                <span class="i" aria-hidden="true"
+                  ><svg viewBox="0 0 24 24" focusable="false">
+                    <path
+                      d="M4 21V5l8-2 8 2v16M9 21v-5h6v5M8 9h2M14 9h2M8 13h2M14 13h2"
+                    /></svg
+                ></span>
+              </div>
+              <span class="tag">Core control</span>
+              <h3>Vendor safeguards</h3>
+              <p class="muted">
+                Set clear security expectations for providers.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section alt" id="advanced">
+        <div class="container">
+          <div class="sec-head">
+            <span class="eyebrow">02</span>
+            <h2>Advanced good practices <span class="hl">to consider</span></h2>
+          </div>
+          <div class="grid g3 equal" data-stagger>
+            <article class="card ctrl adv">
+              <span class="idx">01</span>
+              <div class="ico">
+                <span class="i" aria-hidden="true"
+                  ><svg viewBox="0 0 24 24" focusable="false">
+                    <rect x="8" y="7" width="8" height="12" rx="4" />
+                    <path
+                      d="M9 7a3 3 0 016 0M3 12h5M16 12h5M4 19l4-3M20 19l-4-3M4 5l4 3M20 5l-4 3"
+                    /></svg
+                ></span>
+              </div>
+              <span class="tag amber">Advanced good practice</span>
+              <h3>Vulnerability checks and patching</h3>
+              <p class="muted">Find and fix weak spots.</p>
+            </article>
+            <article class="card ctrl adv">
+              <span class="idx">02</span>
+              <div class="ico">
+                <span class="i" aria-hidden="true"
+                  ><svg viewBox="0 0 24 24" focusable="false">
+                    <path
+                      d="M4 8h14M14 4l4 4-4 4M20 16H6M10 12l-4 4 4 4"
+                    /></svg
+                ></span>
+              </div>
+              <span class="tag amber">Advanced good practice</span>
+              <h3>Secure transfer</h3>
+              <p class="muted">Protect data while it moves.</p>
+            </article>
+            <article class="card ctrl adv">
+              <span class="idx">03</span>
+              <div class="ico">
+                <span class="i" aria-hidden="true"
+                  ><svg viewBox="0 0 24 24" focusable="false">
+                    <circle cx="12" cy="12" r="9" />
+                    <circle cx="12" cy="12" r="4" />
+                    <path d="M12 12l6-6" /></svg
+                ></span>
+              </div>
+              <span class="tag amber">Advanced good practice</span>
+              <h3>Stronger monitoring and testing</h3>
+              <p class="muted">
+                Look for unusual activity and rehearse response.
+              </p>
+            </article>
+          </div>
+          <div class="notice warn">
+            <strong>CORE ≠ ADVANCED</strong>The source material describes
+            minimum obligations and controls separately from advanced good
+            practices. Not every advanced measure is a statutory minimum.
+          </div>
+          <div class="next-link" data-reveal>
+            <div>
+              <small>Next in the journey</small
+              ><a class="ulink" href="rights.html">Rights of people →</a>
+            </div>
+            <a class="btn" href="rights.html">Continue</a>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="cta-band" data-reveal>
+            <span class="eyebrow">Next step</span>
+            <h2>Start with a scoped conversation.</h2>
+            <p class="lead" style="margin-inline: auto">
+              Talk to Netravex about practical privacy readiness for your
+              co-operative bank or growing enterprise.
+            </p>
+            <div class="btn-row">
+              <a class="btn primary" href="contact.html"
+                >Start a Scoped Conversation
+                <span class="i" aria-hidden="true"
+                  ><svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M5 12h14M13 6l6 6-6 6" /></svg></span></a
+              ><a class="btn" href="roadmap.html">View 30-Day Roadmap</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a
+              class="brand"
+              href="index.html"
+              aria-label="Netravex Technologies — home"
+              ><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+                <path
+                  d="M20 3l14 5.5v9.5c0 9-6 15-14 19C12 33 6 27 6 18V8.5z"
+                  fill="rgba(25,216,255,.08)"
+                  stroke="#19d8ff"
+                  stroke-width="1.8"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M14 27V13l12 14V13"
+                  fill="none"
+                  stroke="#f5f9ff"
+                  stroke-width="2.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <div><span>NETRAVEX</span><small>TECHNOLOGIES</small></div></a
+            >
+            <p
+              style="
+                margin-top: 1rem;
+                color: var(--white);
+                font-family: var(--font-head);
+                font-weight: 600;
+              "
+            >
+              Practical Data Privacy. Stronger Digital Trust.
+            </p>
+            <p class="muted">Bhubaneswar, Odisha</p>
+            <p class="muted">
+              <strong>Educational overview, not legal advice.</strong>
+            </p>
+          </div>
+          <div>
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="dpdp.html">DPDP</a></li>
+              <li><a href="readiness.html">Readiness</a></li>
+              <li><a href="security.html">Security</a></li>
+              <li><a href="rights.html">Rights &amp; Data</a></li>
+              <li><a href="response.html">Response</a></li>
+              <li><a href="governance.html">Governance</a></li>
+              <li><a href="roadmap.html">30-Day Roadmap</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Quick links</h4>
+            <ul>
+              <li><a href="readiness.html#journey">The 7-step journey</a></li>
+              <li>
+                <a href="data-governance.html#inventory">Data inventory</a>
+              </li>
+              <li>
+                <a href="response.html#breach">Breach response playbook</a>
+              </li>
+              <li>
+                <a href="roadmap.html#scorecard"
+                  >Proposed readiness scorecard</a
+                >
+              </li>
+              <li><a href="contact.html">Start a scoped conversation</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="legal">
+          <p>
+            <strong>Legal disclaimer.</strong> Legal applicability, dates and
+            obligations under the DPDP framework may change. Current official
+            notifications and qualified legal advice should be checked before
+            relying on specific requirements.
+          </p>
+          <p>
+            Timing and rule references are shown as reported in the EY India
+            DPDP Rules report (January 2026) and the Netravex Integrated
+            Marketing Plan (1 Nov 2026), as cited in the source brochure. ©
+            Netravex Technologies.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <button class="to-top" type="button" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/three-scene.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/interactions.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
